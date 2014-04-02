@@ -60,6 +60,12 @@
 + (void)tryToSendVelocity:(double)vel orientation:(double)ort andPosition:(Position *)p {
     
     if([self isRegistered]) {
+        
+        if(p == nil) {
+            
+            NSLog(@"Fora do grid...");
+            return;
+        }
     
         MKNetworkOperation * op = [[Network shared] requestSendDataWithUID:[self uid]
                                                                   position:p
@@ -75,6 +81,13 @@
 }
 
 + (void)retrieveTrafficDataFromStart:(Position *)i end:(Position *)f andScale:(unsigned)k withSuccess:(void (^)(NSArray * data, NSDate * time))s andError:(void (^)(NSError * err))e {
+    
+    if(i == nil || f == nil) {
+        
+        NSLog(@"Fora do grid...");
+        e(nil);
+        return;
+    }
     
     MKNetworkOperation * op = [[Network shared] requestTrafficWithInitialPosition:i
                                                                             final:f

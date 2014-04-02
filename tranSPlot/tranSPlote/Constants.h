@@ -27,8 +27,8 @@ otherButtonTitles:nil] show]
 #define MAX_GPS_TRIES 5
 #define MAX_GPS_ACCURACY 10.0
 
-#warning TROCAR ESTE PELO ENDERECO DO SEU WEBSERVICE
-#define WEB_SERVICE_SERVER @"179.184.209.242/transplot-rest/rest"
+/* #warning TROCAR ESTE PELO ENDERECO DO SEU WEBSERVICE */
+#define WEB_SERVICE_SERVER @"54.201.69.11/transplot-rest/rest"
 
 /* Definições do mapa */
 
